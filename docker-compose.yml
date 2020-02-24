@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  dynamo:
+    container_name: dynamodb
+    image: amazon/dynamodb-local
+    networks:
+      - backend
+    ports:
+      - '8000:8000'
+    command: '-jar DynamoDBLocal.jar -sharedDb -dbPath .'
+networks:
+  backend:
+    name: sam-backend

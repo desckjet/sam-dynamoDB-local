@@ -1,0 +1,2 @@
+aws dynamodb put-item --table-name User --item '{ "userid": {"S": "1"}, "FirstName": {"S": "Bill"}, "LastName": {"S": "Smith"} }' --return-consumed-capacity TOTAL --endpoint-url http://localhost:8000
+aws dynamodb put-item --table-name User --item '{ "userid": {"S": "2"}, "FirstName": {"S": "John"}, "LastName": {"S": "Smith"} }' --return-consumed-capacity TOTAL --endpoint-url http://localhost:8000
