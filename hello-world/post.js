@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
-//AWS.config.update({ region:'us-east-2' });
 AWS.config.update({ 
     region: 'us-east-2',
+    //Uncomment this if you want to run dynamodb locally
     //dynamodb: {
     //    endpoint: process.env.AWS_DYNAMODB_ENDPOINT
     //}
@@ -10,6 +10,7 @@ AWS.config.update({
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 const tableName = process.env.TABLE_NAME;
+//Uncomment this if you want to run dynamodb locally
 //const tableName = 'User';
 
 exports.lambdaHandler = async(event) => {
@@ -24,7 +25,7 @@ exports.lambdaHandler = async(event) => {
         website: website
     }
 
-    let data = await dynamodb.put({
+    await dynamodb.put({
         TableName: tableName,
         Item: item
     }).promise();
