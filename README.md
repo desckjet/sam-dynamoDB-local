@@ -23,17 +23,17 @@ To use the SAM CLI, you need the following tools.
 
 In the root path of the project create a service for DynamoDB
 ```bash
-docker-compose up -d
+sam-dynamoDB-local$ docker-compose up -d
 ```
 
 Create the table
 ```bash
-bash dynamodb-create-table.sh 
+sam-dynamoDB-local$ bash dynamodb-create-table.sh 
 ```
 
 Check if the table has Items
 ```bash
-bash dynamodb-scan-table.sh 
+sam-dynamoDB-local$ bash dynamodb-scan-table.sh 
 ```
 
 ## Use the SAM CLI to build and test locally
